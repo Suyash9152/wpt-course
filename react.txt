@@ -1,0 +1,28 @@
+import {Component} from "react";
+export class ScoreBoard extends Component{
+constructor() //constructor is used to initialized the state
+{
+	super();
+	this.state={
+				score:0
+			}
+        this.incrementScore=this.incrementScore.bind(this);
+	}
+
+	incrementScore(){
+	this.setState({score:this.state.score+4});	
+	}
+	
+	render()// used to return user interface
+	{
+		return(
+		<div>
+			<h1>{this.state.score}</h1> //value of state will be decided by component dynamically
+			<button onClick={this.incrementScore}>+</button> 
+
+			<button>-</button>
+		</div>
+
+	);
+}
+}
